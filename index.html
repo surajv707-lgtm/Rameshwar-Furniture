@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PREMIUM CAR GALLERY | TRUST & EXCELLENCE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --deep-charcoal: #121212;
+            --trust-blue: #1A2A6C;
+            --soft-white: #F5F5F5;
+            --slate-gray: #2C2C2C;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--deep-charcoal);
+            color: var(--soft-white);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .nav-link {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(18, 18, 18, 0.95);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .logo { font-size: 1.8rem; font-weight: 700; color: var(--primary-gold); }
+
+        .menu-toggle {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .menu-toggle span {
+            width: 30px;
+            height: 2px;
+            background: var(--primary-gold);
+        }
+
+        /* Full Screen Menu Overlay */
+        #menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--deep-charcoal);
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+
+        .menu-link {
+            font-size: 3rem;
+            color: var(--soft-white);
+            text-decoration: none;
+            margin: 1rem 0;
+            transition: var(--transition);
+        }
+
+        .menu-link:hover { color: var(--primary-gold); transform: scale(1.1); }
+
+        /* --- SECTION LOGIC --- */
+        .page-section {
+            padding: 100px 10%;
+            min-height: 100vh;
+            display: none; /* Hidden by default */
+            animation: fadeIn 0.8s ease;
+        }
+
+        .active-section { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- HOME PREVIEW --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80&w=1920') no-select center/cover;
+            text-align: center;
+        }
+
+        .hero h1 { font-size: clamp(3rem, 8vw, 6rem); margin-bottom: 1rem; color: #fff; }
+
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .car-card {
+            background: var(--slate-gray);
+            border-radius: 4px;
+            overflow: hidden;
+            border-bottom: 3px solid var(--primary-gold);
+            transition: var(--transition);
+        }
+
+        .car-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+
+        .car-card img { width: 100%; height: 200px; object-fit: cover; }
+
+        .card-content { padding: 1.5rem; }
+
+        /* --- LARGE TYPOGRAPHY DETAILS --- */
+        .detail-text {
+            font-size: 1.4rem;
+            max-width: 900px;
+            margin-bottom: 2.5rem;
+            color: #ccc;
+        }
+
+        .headline-large {
+            font-size: 3.5rem;
+            color: var(--primary-gold);
+            margin-bottom: 2rem;
+            line-height: 1.1;
+        }
+
+        /* --- CONTACT FORM --- */
+        .contact-container {
+            background: var(--slate-gray);
+            padding: 4rem;
+            border-radius: 8px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .form-group { margin-bottom: 1.5rem; }
+
+        input, textarea {
+            width: 100%;
+            padding: 1rem;
+            background: #1a1a1a;
+            border: 1px solid #444;
+            color: white;
+            font-family: 'Inter', sans-serif;
+        }
+
+        input:focus { border-color: var(--primary-gold); outline: none; }
+
+        .btn-premium {
+            background: var(--primary-gold);
+            color: black;
+            padding: 1rem 3rem;
+            border: none;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-premium:hover { background: #fff; transform: scale(1.05); }
+
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--primary-gold);
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">LUXE GALLERY</div>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <div id="menu-overlay">
+        <a href="#" class="menu-link" onclick="showSection('home')">Home</a>
+        <a href="#" class="menu-link" onclick="showSection('inventory')">Inventory</a>
+        <a href="#" class="menu-link" onclick="showSection('about')">Our Legacy</a>
+        <a href="#" class="menu-link" onclick="showSection('contact')">Connect</a>
+    </div>
+
+    <section id="home" class="page-section active-section">
+        <div class="hero">
+            <h1>Elite Performance</h1>
+            <p style="font-size: 1.5rem; letter-spacing: 5px;">DEFINING LUXURY SINCE 1998</p>
+        </div>
+
+        <div class="preview-grid">
+            <div class="car-card" onclick="showSection('inventory')">
+                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=800" alt="Car">
+                <div class="card-content"><h3>Sports Collection</h3><p>View Details →</p></div>
+            </div>
+            <div class="car-card" onclick="showSection('inventory')">
+                <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&q=80&w=800" alt="Car">
+                <div class="card-content"><h3>Executive Sedans</h3><p>View Details →</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="inventory" class="page-section">
+        <div class="back-btn" onclick="showSection('home')">← BACK TO HOME</div>
+        <h2 class="headline-large">Premium Inventory</h2>
+        <p class="detail-text">
+            Our collection is meticulously curated for the most discerning drivers. Every vehicle undergoes a 200-point trust certification, ensuring that luxury is matched by uncompromising reliability and performance.
+        </p>
+        </section>
+
+    <section id="about" class="page-section">
+        <div class="back-btn" onclick="showSection('home')">← BACK TO HOME</div>
+        <h2 class="headline-large">A Legacy of Trust</h2>
+        <p class="detail-text">
+            We don't just sell cars; we provide an entry into a world of excellence. Our heritage is built on the foundations of transparency, integrity, and the pursuit of automotive perfection.
+        </p>
+        <p class="detail-text">
+            Located in the heart of the automotive district, our showroom stands as a testament to engineering beauty. Every corner of our space is designed to reflect the premium nature of the vehicles we house.
+        </p>
+    </section>
+
+    <section id="contact" class="page-section">
+        <div class="back-btn" onclick="showSection('home')">← BACK TO HOME</div>
+        <h2 class="headline-large">Secure Your Consultation</h2>
+        
+        <div class="contact-container">
+            <form action="https://formspree.io/f/YOUR_ID_HERE" method="POST">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="FULL NAME" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="EMAIL ADDRESS" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" rows="5" placeholder="TELL US ABOUT YOUR REQUIREMENTS"></textarea>
+                </div>
+                <button type="submit" class="btn-premium">SEND INQUIRY</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        // Toggle Full Screen Menu
+        function toggleMenu() {
+            const overlay = document.getElementById('menu-overlay');
+            overlay.style.display = (overlay.style.display === 'flex') ? 'none' : 'flex';
+        }
+
+        // Section Navigation Logic
+        function showSection(sectionId) {
+            // Close menu
+            document.getElementById('menu-overlay').style.display = 'none';
+
+            // Hide all sections
+            const sections = document.querySelectorAll('.page-section');
+            sections.forEach(s => s.classList.remove('active-section'));
+
+            // Show target section
+            document.getElementById(sectionId).classList.add('active-section');
+
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Back button history logic
+        window.onpopstate = function() {
+            showSection('home');
+        };
+    </script>
+</body>
+</html>
