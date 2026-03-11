@@ -1,445 +1,446 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Rameshwar Furniture</title>
+<title>The Palate | Fine Dining Restaurant in Sion Mumbai</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<meta name="description" content="The Palate is a fine dining Indian restaurant in Sion, Mumbai offering delicious cuisine, cocktails, private dining rooms and sports bar experience.">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-body{
+*{
 margin:0;
-font-family:Poppins;
-background:#7a2e0e;
-color:#fff3e6;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
-/* TOP BAR */
-
-.topbar{
-background:#6a260b;
-padding:8px 20px;
-font-size:14px;
-display:flex;
-gap:20px;
+body{
+background:#0f0f0f;
+color:white;
+line-height:1.6;
 }
 
-/* HEADER */
+/* NAVBAR */
 
 header{
-background:#f2f2f2;
-color:#7a2e0e;
-padding:15px 20px;
+position:fixed;
+top:0;
+width:100%;
+background:#111;
 display:flex;
 justify-content:space-between;
 align-items:center;
+padding:18px 8%;
+z-index:1000;
 }
 
 .logo{
+font-size:24px;
+font-weight:700;
+color:#f4c430;
+}
+
+nav ul{
 display:flex;
-gap:10px;
+list-style:none;
+gap:30px;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+font-weight:500;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#f4c430;
+}
+
+.menu-toggle{
+display:none;
+font-size:28px;
+cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+background:url("https://images.unsplash.com/photo-1555396273-367ea4eb4db5") center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:20px;
+}
+
+.hero h1{
+font-size:55px;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:18px;
+margin-bottom:25px;
+}
+
+.btn{
+display:inline-block;
+padding:12px 28px;
+background:#f4c430;
+color:black;
+border-radius:30px;
+text-decoration:none;
+font-weight:600;
+margin:5px;
+}
+
+section{
+padding:90px 10%;
+}
+
+/* ABOUT */
+
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
 align-items:center;
 }
 
-.logo span{
-font-size:24px;
-font-weight:700;
-}
-
-.tagline{
-font-size:14px;
-color:#555;
-}
-
-.menu-btn{
-font-size:26px;
-cursor:pointer;
+.about img{
+width:100%;
+border-radius:10px;
 }
 
 /* MENU */
 
-.menu{
-display:none;
-background:#7a2e0e;
-padding:20px;
-}
-
-.menu a{
-display:block;
-color:#fff3e6;
-text-decoration:none;
-padding:10px 0;
-font-size:20px;
-}
-
-.menu a:hover{
-color:#ffd27a;
-}
-
-/* SECTION */
-
-section{
-padding:40px 20px;
-max-width:1100px;
-margin:auto;
-}
-
-h1{
-font-size:40px;
-line-height:1.4;
-}
-
-p{
-font-size:18px;
-line-height:1.8;
-}
-
-/* GRID */
-
-.grid{
+.menu-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
-margin-top:20px;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+margin-top:30px;
 }
 
-.card{
-background:#8b3a16;
+.menu-item{
+background:#1b1b1b;
 padding:20px;
 border-radius:10px;
 text-align:center;
+transition:0.3s;
 }
 
-.card img{
+.menu-item:hover{
+transform:translateY(-6px);
+background:#242424;
+}
+
+/* GALLERY */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px;
+}
+
+.gallery img{
 width:100%;
 border-radius:8px;
 }
 
-.card h3{
-margin-top:10px;
+/* REVIEWS */
+
+.reviews{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
 }
 
-/* CONTACT */
+.review{
+background:#1c1c1c;
+padding:20px;
+border-radius:8px;
+}
+
+/* FORM */
 
 form{
+max-width:500px;
+margin:auto;
 display:flex;
 flex-direction:column;
 gap:15px;
-max-width:500px;
 }
 
-input,textarea{
+input,select{
 padding:12px;
 border:none;
-border-radius:5px;
+border-radius:6px;
 }
 
 button{
 padding:12px;
+background:#f4c430;
 border:none;
-background:#ffd27a;
-color:#7a2e0e;
 font-weight:600;
 cursor:pointer;
+border-radius:6px;
+}
+
+/* CONTACT */
+
+.contact-info{
+text-align:center;
+margin-top:30px;
 }
 
 /* FOOTER */
 
 footer{
-background:#7a2e0e;
-padding:40px 20px;
-}
-
-.footer-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:30px;
-}
-
-.footer-title{
-font-size:20px;
-font-weight:600;
-margin-bottom:10px;
-}
-
-.footer a{
-display:block;
-color:#fff3e6;
-text-decoration:none;
-margin:6px 0;
-}
-
-.copyright{
+background:#111;
 text-align:center;
-margin-top:20px;
-font-size:14px;
+padding:25px;
+margin-top:40px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.about{
+grid-template-columns:1fr;
+}
+
+nav ul{
+position:absolute;
+top:70px;
+right:0;
+background:#111;
+flex-direction:column;
+width:200px;
+display:none;
+padding:20px;
+}
+
+nav ul.active{
+display:flex;
+}
+
+.menu-toggle{
+display:block;
+}
+
 }
 
 </style>
-
 </head>
 
 <body>
 
-<div class="topbar">
-
-📞 +91 98765 43210  
-✉ info@rameshwarfurniture.com
-
-</div>
-
 <header>
 
-<div class="logo">
-🛋
-<div>
-<span>Rameshwar Furniture</span>
-<div class="tagline">Quality. Comfort. Style.</div>
-</div>
-</div>
+<div class="logo">THE PALATE</div>
 
-<div class="menu-btn" onclick="toggleMenu()">☰</div>
+<nav>
+<ul id="menu">
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#menu-section">Menu</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#reviews">Reviews</a></li>
+<li><a href="#reserve">Reserve</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
 </header>
 
-<div class="menu" id="menu">
+<!-- HERO -->
 
-<a href="#home">Home</a>
-<a href="#living">Living Room</a>
-<a href="#bedroom">Bedroom</a>
-<a href="#dining">Dining</a>
-<a href="#office">Office</a>
-<a href="#custom">Custom Furniture</a>
-<a href="#contact">Contact</a>
+<section class="hero" id="home">
+
+<div>
+<h1>The Palate</h1>
+
+<p>Authentic Indian Dining Experience in the Heart of Mumbai</p>
+
+<a href="#menu-section" class="btn">View Menu</a>
+<a href="#reserve" class="btn">Reserve Table</a>
+
+<p style="margin-top:20px;">⭐ 4.2 Rating (700+ Reviews)</p>
 
 </div>
 
-<section id="home">
+</section>
 
-<h1>Premium Furniture Crafted With Passion For Over 25 Years</h1>
+<!-- ABOUT -->
+
+<section id="about">
+
+<h2>About Us</h2>
+
+<div class="about">
+
+<img src="https://images.unsplash.com/photo-1555992336-03a23c7b20ee">
+
+<div>
 
 <p>
 
-Rameshwar Furniture is your trusted partner for elegant and durable
-home furniture. Our mission is to create beautiful living spaces by
-combining expert craftsmanship, premium materials, and timeless
-design.
-
-From luxury living room sofas to modern bedroom furniture,
-our collections bring comfort, style, and durability together.
+The Palate is a fine dining Indian restaurant located in Sion, Mumbai. Known for delicious food, excellent service and a vibrant atmosphere, it is a perfect destination for family dinners, parties and celebrations.
 
 </p>
 
-<h2>Explore Our Categories</h2>
+<br>
 
-<div class="grid">
+<p>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85">
-<h3>Living Room</h3>
-</div>
+Our restaurant features spacious seating, private dining rooms for events, a lively sports bar and two levels of cocktail bars serving premium beverages.
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1505693314120-0d443867891c">
-<h3>Bedroom</h3>
-</div>
+</p>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511">
-<h3>Dining</h3>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf">
-<h3>Office</h3>
 </div>
 
 </div>
 
 </section>
 
-<section id="living">
+<!-- MENU -->
 
-<h1>Luxury Living Room Furniture</h1>
+<section id="menu-section">
 
-<p>
+<h2>Popular Dishes</h2>
 
-Our living room furniture is designed to create a welcoming
-environment where comfort meets sophistication.
+<div class="menu-grid">
 
-Choose from premium sofas, elegant coffee tables,
-stylish TV units, and beautifully crafted storage solutions.
+<div class="menu-item">Chicken Biryani</div>
+<div class="menu-item">Chicken Peri Peri Kabab</div>
+<div class="menu-item">Chicken Rara</div>
+<div class="menu-item">Burnt Garlic Fried Rice</div>
+<div class="menu-item">Bombil Fry</div>
+<div class="menu-item">Surmai Fry</div>
+<div class="menu-item">Sweet Corn Chicken Soup</div>
+<div class="menu-item">Dal Khichdi</div>
 
-</p>
-
-<button onclick="history.back()">⬅ Back</button>
-
-</section>
-
-<section id="bedroom">
-
-<h1>Modern Bedroom Furniture</h1>
-
-<p>
-
-Experience restful sleep and beautiful design with our
-bedroom furniture collection including beds, wardrobes,
-and bedside tables crafted with precision.
-
-</p>
-
-<button onclick="history.back()">⬅ Back</button>
+</div>
 
 </section>
 
-<section id="dining">
+<!-- GALLERY -->
 
-<h1>Elegant Dining Furniture</h1>
+<section id="gallery">
 
-<p>
+<h2>Gallery</h2>
 
-Create unforgettable family moments with our premium
-dining tables and chairs designed to combine style
-with everyday durability.
+<div class="gallery">
 
-</p>
+<img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4">
+<img src="https://images.unsplash.com/photo-1552566626-52f8b828add9">
+<img src="https://images.unsplash.com/photo-1544145945-f90425340c7e">
+<img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836">
 
-<button onclick="history.back()">⬅ Back</button>
-
-</section>
-
-<section id="office">
-
-<h1>Professional Office Furniture</h1>
-
-<p>
-
-Boost productivity with comfortable office desks,
-chairs, and smart storage solutions built
-for modern workspaces.
-
-</p>
-
-<button onclick="history.back()">⬅ Back</button>
+</div>
 
 </section>
 
-<section id="custom">
+<!-- REVIEWS -->
 
-<h1>Custom Furniture</h1>
+<section id="reviews">
 
-<p>
+<h2>Customer Reviews</h2>
 
-We specialize in custom furniture tailored
-to your space and style preferences.
+<div class="reviews">
 
-Our expert craftsmen design furniture
-that perfectly fits your home or office.
+<div class="review">
+Excellent food, good service and cool atmosphere. Dal Khichdi was superb.
+</div>
 
-</p>
+<div class="review">
+Perfect place for friends and family gatherings with great cocktails.
+</div>
 
-<button onclick="history.back()">⬅ Back</button>
+<div class="review">
+Great ambiance with sports bar and private dining rooms.
+</div>
+
+</div>
 
 </section>
 
-<section id="contact">
+<!-- RESERVATION -->
 
-<h1>Contact Us</h1>
+<section id="reserve">
 
-<form action="mailto:info@rameshwarfurniture.com" method="POST">
+<h2>Reserve a Table</h2>
+
+<form onsubmit="bookTable(event)">
 
 <input type="text" placeholder="Your Name" required>
+<input type="tel" placeholder="Phone Number" required>
+<input type="date" required>
+<input type="time" required>
 
-<input type="email" placeholder="Your Email" required>
+<select required>
+<option>Guests</option>
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4+</option>
+</select>
 
-<textarea rows="5" placeholder="Message"></textarea>
-
-<button type="submit">Send Message</button>
+<button type="submit">Reserve Now</button>
 
 </form>
 
 </section>
 
+<!-- CONTACT -->
+
+<section id="contact">
+
+<h2>Contact Us</h2>
+
+<div class="contact-info">
+
+<p>📍 Hubtown Vedant, 1st Floor H.M. Marg</p>
+<p>Sardar Nagar No.4, Sion Koliwada</p>
+<p>Mumbai, Maharashtra 400037</p>
+
+<br>
+
+<p>📞 089760 52856</p>
+
+<br>
+
+<a href="https://wa.me/918976052856" class="btn">WhatsApp</a>
+
+</div>
+
+</section>
+
 <footer>
 
-<div class="footer-grid">
-
-<div>
-
-<div class="footer-title">Rameshwar Furniture</div>
-
-<p>
-
-Quality furniture crafted with passion for over
-25 years. Your trusted partner in creating
-beautiful spaces.
-
-</p>
-
-</div>
-
-<div>
-
-<div class="footer-title">Quick Links</div>
-
-<a href="#home">Home</a>
-<a href="#living">Categories</a>
-<a href="#living">All Products</a>
-<a href="#custom">Custom Orders</a>
-<a href="#">Reviews</a>
-
-</div>
-
-<div>
-
-<div class="footer-title">Categories</div>
-
-<a href="#living">Living Room</a>
-<a href="#bedroom">Bedroom</a>
-<a href="#dining">Dining</a>
-<a href="#office">Office</a>
-
-</div>
-
-<div>
-
-<div class="footer-title">Contact Us</div>
-
-📍 Shop No.1, Ground Floor  
-Main Market, Mumbai  
-Maharashtra, India  
-
-<br><br>
-
-📞 +91 98765 43210  
-📞 +91 98765 43211  
-
-<br><br>
-
-✉ info@rameshwarfurniture.com
-
-</div>
-
-</div>
-
-<div class="copyright">
-
-© 2024 Rameshwar Furniture. All rights reserved.
-
-</div>
+<p>© 2026 The Palate Restaurant | All Rights Reserved</p>
 
 </footer>
 
 <script>
 
 function toggleMenu(){
-let menu=document.getElementById("menu")
-menu.style.display = menu.style.display==="block"?"none":"block"
+document.getElementById("menu").classList.toggle("active");
+}
+
+function bookTable(e){
+e.preventDefault();
+alert("Thank you! Your table reservation request has been submitted.");
 }
 
 </script>
