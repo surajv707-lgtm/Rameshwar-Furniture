@@ -1,328 +1,317 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RAMESHWAR FURNITURE | PREMIUM CRAFTSMANSHIP</title>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-gold: #C5A021;
-            --deep-dark: #0F0F0F;
-            --slate-bg: #1A1A1A;
-            --text-main: #F2F2F2;
-            --text-dim: #B0B0B0;
-            --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+<title>Premium Car Gallery</title>
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--deep-dark);
-            color: var(--text-main);
-            line-height: 1.8;
-            overflow-x: hidden;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
-        h1, h2, h3, .nav-item {
-            font-family: 'Oswald', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
+<style>
 
-        /* --- NAVIGATION --- */
-        nav {
-            padding: 20px 6%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(15, 15, 15, 0.98);
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(197, 160, 33, 0.15);
-        }
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:#0f172a;
+color:white;
+}
 
-        .brand-logo { 
-            font-size: 1.6rem; 
-            font-weight: 700; 
-            color: var(--primary-gold); 
-            text-decoration: none;
-        }
+/* NAVBAR */
 
-        .menu-btn {
-            cursor: pointer;
-            padding: 10px;
-            z-index: 3000;
-        }
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 40px;
+background:#020617;
+position:sticky;
+top:0;
+}
 
-        .menu-btn div {
-            width: 25px;
-            height: 2px;
-            background: var(--primary-gold);
-            margin: 5px 0;
-            transition: var(--transition);
-        }
+.logo{
+font-size:24px;
+font-weight:700;
+color:#38bdf8;
+}
 
-        /* Full Screen Menu Page */
-        #main-menu {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--deep-dark);
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 2500;
-        }
+.menu-btn{
+font-size:28px;
+cursor:pointer;
+}
 
-        .menu-option {
-            font-size: 3.5rem;
-            color: var(--text-main);
-            text-decoration: none;
-            margin: 15px 0;
-            transition: var(--transition);
-            cursor: pointer;
-        }
+.menu{
+display:none;
+flex-direction:column;
+background:#020617;
+position:absolute;
+top:70px;
+right:30px;
+padding:20px;
+border-radius:8px;
+}
 
-        .menu-option:hover { color: var(--primary-gold); letter-spacing: 8px; }
+.menu a{
+text-decoration:none;
+color:white;
+margin:10px 0;
+font-size:18px;
+}
 
-        /* --- PAGE SECTIONS --- */
-        .page-view {
-            padding: 120px 8% 60px;
-            min-height: 100vh;
-            display: none;
-            animation: slideUp 0.6s ease-out;
-        }
+.menu a:hover{
+color:#38bdf8;
+}
 
-        .active-view { display: block; }
+/* HERO */
 
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+.hero{
+height:90vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:20px;
+}
 
-        /* --- HOME PREVIEW --- */
-        .hero-banner {
-            height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.4), var(--deep-dark)), 
-                        url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=1920');
-            background-size: cover;
-            background-position: center;
-            text-align: center;
-            margin-bottom: 50px;
-        }
+.hero h1{
+font-size:50px;
+line-height:1.3;
+}
 
-        .hero-banner h1 { font-size: clamp(3rem, 10vw, 6rem); color: #fff; }
+.hero p{
+max-width:700px;
+margin:auto;
+font-size:18px;
+opacity:0.8;
+}
 
-        .home-preview-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
+/* BUTTON */
 
-        .preview-card {
-            background: var(--slate-bg);
-            border: 1px solid #333;
-            padding: 2px;
-            transition: var(--transition);
-            cursor: pointer;
-        }
+.btn{
+background:#38bdf8;
+padding:12px 30px;
+border-radius:30px;
+display:inline-block;
+margin-top:20px;
+text-decoration:none;
+color:black;
+font-weight:600;
+}
 
-        .preview-card:hover { border-color: var(--primary-gold); transform: scale(1.02); }
+/* SECTION */
 
-        .preview-card img { width: 100%; height: 250px; object-fit: cover; }
+section{
+padding:80px 40px;
+max-width:1200px;
+margin:auto;
+}
 
-        .preview-info { padding: 25px; }
+.title{
+font-size:38px;
+margin-bottom:30px;
+color:#38bdf8;
+}
 
-        /* --- CONTENT TYPOGRAPHY --- */
-        .large-line {
-            font-size: 4rem;
-            line-height: 1.1;
-            margin-bottom: 30px;
-            color: var(--primary-gold);
-        }
+/* CAR GRID */
 
-        .big-paragraph {
-            font-size: 1.35rem;
-            color: var(--text-dim);
-            max-width: 1000px;
-            margin-bottom: 40px;
-            text-align: justify;
-        }
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
 
-        .back-nav {
-            display: inline-block;
-            color: var(--primary-gold);
-            font-weight: 600;
-            margin-bottom: 40px;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
+.card{
+background:#1e293b;
+border-radius:10px;
+overflow:hidden;
+}
 
-        /* --- CONTACT FORM --- */
-        .form-box {
-            background: #111;
-            border: 1px solid var(--primary-gold);
-            padding: 50px;
-            max-width: 900px;
-            margin-top: 50px;
-        }
+.card img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
 
-        .input-row { margin-bottom: 25px; }
+.card h3{
+padding:10px;
+}
 
-        input, textarea {
-            width: 100%;
-            padding: 18px;
-            background: #000;
-            border: 1px solid #333;
-            color: white;
-            font-size: 1rem;
-        }
+/* FORM */
 
-        input:focus { border-color: var(--primary-gold); outline: none; }
+form{
+display:flex;
+flex-direction:column;
+gap:15px;
+max-width:500px;
+}
 
-        .submit-btn {
-            background: var(--primary-gold);
-            color: #000;
-            padding: 15px 45px;
-            border: none;
-            font-weight: 700;
-            font-family: 'Oswald', sans-serif;
-            cursor: pointer;
-            transition: var(--transition);
-        }
+input,textarea{
+padding:12px;
+border:none;
+border-radius:6px;
+}
 
-        .submit-btn:hover { background: #fff; letter-spacing: 3px; }
+button{
+background:#38bdf8;
+border:none;
+padding:12px;
+font-weight:600;
+cursor:pointer;
+}
 
-    </style>
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:40px;
+background:#020617;
+margin-top:40px;
+}
+
+</style>
 </head>
+
 <body>
 
-    <nav>
-        <a href="#" class="brand-logo" onclick="openPage('home')">RAMESHWAR FURNITURE</a>
-        <div class="menu-btn" onclick="toggleMainMenu()">
-            <div></div><div></div><div></div>
-        </div>
-    </nav>
+<nav>
 
-    <div id="main-menu">
-        <div class="menu-option" onclick="openPage('home')">Home</div>
-        <div class="menu-option" onclick="openPage('collections')">Collections</div>
-        <div class="menu-option" onclick="openPage('about')">Our Trust</div>
-        <div class="menu-option" onclick="openPage('contact')">Inquiry</div>
-    </div>
+<div class="logo">CAR GALLERY</div>
 
-    <div id="home" class="page-view active-view">
-        <div class="hero-banner">
-            <h1>CRAFTING TRUST</h1>
-        </div>
-        
-        <h2 class="large-line">Our Masterpieces</h2>
-        <div class="home-preview-grid">
-            <div class="preview-card" onclick="openPage('collections')">
-                <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&q=80&w=800" alt="Living">
-                <div class="preview-info"><h3>Living Room Luxury</h3><p>View Series →</p></div>
-            </div>
-            <div class="preview-card" onclick="openPage('collections')">
-                <img src="https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&q=80&w=800" alt="Bedroom">
-                <div class="preview-info"><h3>Royal Bedroom Sets</h3><p>View Series →</p></div>
-            </div>
-        </div>
-    </div>
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
 
-    <div id="collections" class="page-view">
-        <div class="back-nav" onclick="goBack()">← Go Back</div>
-        <h2 class="large-line">Premium Inventory</h2>
-        <p class="big-paragraph">
-            At Rameshwar Furniture, we specialize in high-durability, premium aesthetic wood and metal work. Our collections range from Sofa Sets, Dining Tables, and Wall-to-Wall Sliding Wardrobes to bespoke TV units and Kitchen cabinets. Each piece is designed to command attention while providing the comfort your home deserves.
-        </p>
-        <p class="big-paragraph">
-            Every product is hand-finished with luxury textures that resonate with our "Trust-First" philosophy. We use only seasoned materials to ensure that your investment lasts for generations.
-        </p>
-    </div>
+<div class="menu" id="menu">
 
-    <div id="about" class="page-view">
-        <div class="back-nav" onclick="goBack()">← Go Back</div>
-        <h2 class="large-line">Our Professional Legacy</h2>
-        <p class="big-paragraph">
-            Located at the heart of the furniture hub, Rameshwar Furniture has been a hallmark of quality for over two decades. We believe that professional service and premium materials are the only way to build lasting relationships with our clients.
-        </p>
-        <p class="big-paragraph">
-            Address: [Insert Same Location from Car Site Here] <br>
-            Direction: [Insert Same Map Link Here]
-        </p>
-    </div>
+<a href="#home">Home</a>
+<a href="#gallery">Gallery</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
 
-    <div id="contact" class="page-view">
-        <div class="back-nav" onclick="goBack()">← Go Back</div>
-        <h2 class="large-line">Direct Inquiry</h2>
-        <p class="big-paragraph">Fill out the form below and our professional consultant will contact you within 24 hours regarding your furniture requirements.</p>
-        
-        <div class="form-box">
-            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-                <div class="input-row">
-                    <input type="text" name="name" placeholder="YOUR FULL NAME" required>
-                </div>
-                <div class="input-row">
-                    <input type="email" name="email" placeholder="EMAIL ADDRESS" required>
-                </div>
-                <div class="input-row">
-                    <textarea name="requirements" rows="6" placeholder="DESCRIBE YOUR FURNITURE NEEDS (Sofa, Bed, Wardrobe, etc.)"></textarea>
-                </div>
-                <button type="submit" class="submit-btn">SEND TO MY EMAIL</button>
-            </form>
-        </div>
-    </div>
+</div>
 
-    <script>
-        let historyStack = ['home'];
+</nav>
 
-        function toggleMainMenu() {
-            const menu = document.getElementById('main-menu');
-            menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
-        }
+<!-- HERO -->
 
-        function openPage(pageId) {
-            // Close menu if open
-            document.getElementById('main-menu').style.display = 'none';
+<section class="hero" id="home">
 
-            // Manage History for "Back" button
-            if (historyStack[historyStack.length - 1] !== pageId) {
-                historyStack.push(pageId);
-            }
+<div>
 
-            // Hide all views
-            document.querySelectorAll('.page-view').forEach(view => {
-                view.classList.remove('active-view');
-            });
+<h1>Discover The Most Powerful Luxury Cars</h1>
 
-            // Show current view
-            document.getElementById(pageId).classList.add('active-view');
-            window.scrollTo(0, 0);
-        }
+<p>
+Welcome to our premium car gallery where performance meets luxury.
+Our platform showcases powerful machines designed for speed, elegance,
+and engineering excellence. Explore world-class vehicles and experience
+the ultimate automotive showcase built for true car enthusiasts.
+</p>
 
-        function goBack() {
-            if (historyStack.length > 1) {
-                historyStack.pop(); // Remove current
-                const previousPage = historyStack[historyStack.length - 1];
-                
-                document.querySelectorAll('.page-view').forEach(view => {
-                    view.classList.remove('active-view');
-                });
-                
-                document.getElementById(previousPage).classList.add('active-view');
-            }
-        }
-    </script>
+<a class="btn" href="#gallery">Explore Cars</a>
+
+</div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section id="gallery">
+
+<h2 class="title">Featured Cars</h2>
+
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
+<h3>Luxury Sports Car</h3>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c">
+<h3>Premium Performance</h3>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8">
+<h3>Classic Muscle Car</h3>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1542362567-b07e54358753">
+<h3>Modern Supercar</h3>
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<h2 class="title">About Our Gallery</h2>
+
+<p style="font-size:18px;line-height:1.8;max-width:900px;">
+
+Our platform is designed to bring automotive passion to life. 
+We provide a high-quality visual experience showcasing some of the 
+most powerful, luxurious, and technologically advanced cars ever created.
+
+Every vehicle featured here represents engineering brilliance,
+precision design, and unmatched performance.
+
+Our mission is to create a trusted and professional environment
+where car enthusiasts, collectors, and automotive lovers can explore
+high-end vehicles with detailed visuals and premium presentation.
+
+</p>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<h2 class="title">Contact Us</h2>
+
+<form id="contactForm">
+
+<input type="text" placeholder="Your Name" required>
+
+<input type="email" placeholder="Your Email" required>
+
+<textarea rows="5" placeholder="Your Message"></textarea>
+
+<button type="submit">Send Message</button>
+
+</form>
+
+</section>
+
+<footer>
+
+<p>© 2026 Premium Car Gallery</p>
+
+</footer>
+
+<script>
+
+function toggleMenu(){
+
+let menu=document.getElementById("menu");
+
+menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+
+}
+
+document.getElementById("contactForm").addEventListener("submit",function(e){
+
+e.preventDefault();
+
+alert("Message sent to email successfully!");
+
+});
+
+</script>
+
 </body>
 </html>
 
