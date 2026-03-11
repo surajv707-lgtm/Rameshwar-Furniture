@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>The Palate | Fine Dining Restaurant in Sion Mumbai</title>
+<title>The Palate | Fine Dining Restaurant Mumbai</title>
 
-<meta name="description" content="The Palate is a fine dining Indian restaurant in Sion, Mumbai offering delicious cuisine, cocktails, private dining rooms and sports bar experience.">
+<meta name="description" content="The Palate restaurant in Sion Mumbai serving delicious Indian cuisine, seafood, cocktails and private dining experience.">
+
+<meta name="keywords" content="The Palate Mumbai, restaurant in Sion, Indian restaurant Mumbai, seafood restaurant Mumbai">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -16,13 +19,12 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+font-family:Poppins;
 }
 
 body{
 background:#0f0f0f;
 color:white;
-line-height:1.6;
 }
 
 /* NAVBAR */
@@ -32,30 +34,30 @@ position:fixed;
 top:0;
 width:100%;
 background:#111;
+padding:18px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:18px 8%;
 z-index:1000;
 }
 
 .logo{
-font-size:24px;
+font-size:22px;
 font-weight:700;
 color:#f4c430;
 }
 
 nav ul{
 display:flex;
+gap:25px;
 list-style:none;
-gap:30px;
 }
 
 nav a{
 text-decoration:none;
 color:white;
 font-weight:500;
-transition:0.3s;
+cursor:pointer;
 }
 
 nav a:hover{
@@ -64,81 +66,63 @@ color:#f4c430;
 
 .menu-toggle{
 display:none;
-font-size:28px;
+font-size:26px;
 cursor:pointer;
+}
+
+/* PAGES */
+
+.page{
+display:none;
+padding:110px 10%;
+min-height:100vh;
+}
+
+.active{
+display:block;
 }
 
 /* HERO */
 
 .hero{
-height:100vh;
-background:url("https://images.unsplash.com/photo-1555396273-367ea4eb4db5") center/cover no-repeat;
+height:70vh;
 display:flex;
-align-items:center;
+flex-direction:column;
 justify-content:center;
+align-items:center;
 text-align:center;
-padding:20px;
+background:url("https://images.unsplash.com/photo-1555396273-367ea4eb4db5") center/cover;
 }
 
 .hero h1{
-font-size:55px;
+font-size:50px;
 margin-bottom:10px;
-}
-
-.hero p{
-font-size:18px;
-margin-bottom:25px;
 }
 
 .btn{
 display:inline-block;
-padding:12px 28px;
+padding:12px 25px;
 background:#f4c430;
 color:black;
 border-radius:30px;
 text-decoration:none;
-font-weight:600;
-margin:5px;
+margin-top:15px;
 }
 
-section{
-padding:90px 10%;
-}
+/* MENU GRID */
 
-/* ABOUT */
-
-.about{
+.grid{
 display:grid;
-grid-template-columns:1fr 1fr;
-gap:40px;
-align-items:center;
-}
-
-.about img{
-width:100%;
-border-radius:10px;
-}
-
-/* MENU */
-
-.menu-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
 margin-top:30px;
 }
 
-.menu-item{
-background:#1b1b1b;
+.card{
+background:#1c1c1c;
 padding:20px;
-border-radius:10px;
+border-radius:8px;
 text-align:center;
-transition:0.3s;
-}
-
-.menu-item:hover{
-transform:translateY(-6px);
-background:#242424;
 }
 
 /* GALLERY */
@@ -147,6 +131,7 @@ background:#242424;
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:15px;
+margin-top:20px;
 }
 
 .gallery img{
@@ -154,75 +139,29 @@ width:100%;
 border-radius:8px;
 }
 
-/* REVIEWS */
-
-.reviews{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
-.review{
-background:#1c1c1c;
-padding:20px;
-border-radius:8px;
-}
-
-/* FORM */
-
-form{
-max-width:500px;
-margin:auto;
-display:flex;
-flex-direction:column;
-gap:15px;
-}
-
-input,select{
-padding:12px;
-border:none;
-border-radius:6px;
-}
-
-button{
-padding:12px;
-background:#f4c430;
-border:none;
-font-weight:600;
-cursor:pointer;
-border-radius:6px;
-}
-
 /* CONTACT */
 
-.contact-info{
+.contact{
 text-align:center;
 margin-top:30px;
 }
 
-/* FOOTER */
-
 footer{
 background:#111;
 text-align:center;
-padding:25px;
-margin-top:40px;
+padding:20px;
 }
 
 /* MOBILE */
 
 @media(max-width:768px){
 
-.about{
-grid-template-columns:1fr;
-}
-
 nav ul{
 position:absolute;
-top:70px;
 right:0;
-background:#111;
+top:70px;
 flex-direction:column;
+background:#111;
 width:200px;
 display:none;
 padding:20px;
@@ -248,170 +187,157 @@ display:block;
 <div class="logo">THE PALATE</div>
 
 <nav>
+
 <ul id="menu">
-<li><a href="#home">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#menu-section">Menu</a></li>
-<li><a href="#gallery">Gallery</a></li>
-<li><a href="#reviews">Reviews</a></li>
-<li><a href="#reserve">Reserve</a></li>
-<li><a href="#contact">Contact</a></li>
+
+<li><a onclick="openPage('home')">Home</a></li>
+<li><a onclick="openPage('about')">About</a></li>
+<li><a onclick="openPage('menu')">Menu</a></li>
+<li><a onclick="openPage('gallery')">Gallery</a></li>
+<li><a onclick="openPage('reviews')">Reviews</a></li>
+<li><a onclick="openPage('contact')">Contact</a></li>
+
 </ul>
+
 </nav>
 
 <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
 </header>
 
-<!-- HERO -->
+<!-- HOME -->
 
-<section class="hero" id="home">
+<section id="home" class="page active">
 
-<div>
+<div class="hero">
+
 <h1>The Palate</h1>
 
-<p>Authentic Indian Dining Experience in the Heart of Mumbai</p>
+<p>Authentic Indian Dining Experience in Mumbai</p>
 
-<a href="#menu-section" class="btn">View Menu</a>
-<a href="#reserve" class="btn">Reserve Table</a>
-
-<p style="margin-top:20px;">⭐ 4.2 Rating (700+ Reviews)</p>
+<a class="btn" onclick="openPage('menu')">View Full Menu</a>
 
 </div>
+
+<h2 style="margin-top:40px;">Popular Dishes</h2>
+
+<div class="grid">
+
+<div class="card">Chicken Biryani</div>
+<div class="card">Bombil Fry</div>
+<div class="card">Surmai Fry</div>
+<div class="card">Dal Khichdi</div>
+
+</div>
+
+<a class="btn" onclick="openPage('menu')">View All</a>
 
 </section>
 
 <!-- ABOUT -->
 
-<section id="about">
+<section id="about" class="page">
 
-<h2>About Us</h2>
+<h1>About The Palate</h1>
 
-<div class="about">
+<p style="margin-top:20px;max-width:700px;">
 
-<img src="https://images.unsplash.com/photo-1555992336-03a23c7b20ee">
+The Palate is a premium dining restaurant in Sion Mumbai known for its
+delicious Indian cuisine, seafood specialties and vibrant sports bar.
 
-<div>
-
-<p>
-
-The Palate is a fine dining Indian restaurant located in Sion, Mumbai. Known for delicious food, excellent service and a vibrant atmosphere, it is a perfect destination for family dinners, parties and celebrations.
+The restaurant features spacious seating, private dining rooms for
+family events and cocktail bars on different levels.
 
 </p>
 
 <br>
 
-<p>
-
-Our restaurant features spacious seating, private dining rooms for events, a lively sports bar and two levels of cocktail bars serving premium beverages.
-
-</p>
-
-</div>
-
-</div>
+<a class="btn" onclick="goBack()">← Back</a>
 
 </section>
 
 <!-- MENU -->
 
-<section id="menu-section">
+<section id="menu" class="page">
 
-<h2>Popular Dishes</h2>
+<h1>Full Menu</h1>
 
-<div class="menu-grid">
+<div class="grid">
 
-<div class="menu-item">Chicken Biryani</div>
-<div class="menu-item">Chicken Peri Peri Kabab</div>
-<div class="menu-item">Chicken Rara</div>
-<div class="menu-item">Burnt Garlic Fried Rice</div>
-<div class="menu-item">Bombil Fry</div>
-<div class="menu-item">Surmai Fry</div>
-<div class="menu-item">Sweet Corn Chicken Soup</div>
-<div class="menu-item">Dal Khichdi</div>
+<div class="card">Chicken Biryani</div>
+<div class="card">Chicken Rara</div>
+<div class="card">Chicken Peri Peri Kabab</div>
+<div class="card">Bombil Fry</div>
+<div class="card">Surmai Fry</div>
+<div class="card">Sweet Corn Chicken Soup</div>
+<div class="card">Dal Khichdi</div>
+<div class="card">Fruit Beer</div>
 
 </div>
+
+<br>
+
+<a class="btn" onclick="goBack()">← Back</a>
 
 </section>
 
 <!-- GALLERY -->
 
-<section id="gallery">
+<section id="gallery" class="page">
 
-<h2>Gallery</h2>
+<h1>Gallery</h1>
 
 <div class="gallery">
 
 <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4">
 <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9">
-<img src="https://images.unsplash.com/photo-1544145945-f90425340c7e">
 <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836">
 
 </div>
+
+<br>
+
+<a class="btn" onclick="goBack()">← Back</a>
 
 </section>
 
 <!-- REVIEWS -->
 
-<section id="reviews">
+<section id="reviews" class="page">
 
-<h2>Customer Reviews</h2>
+<h1>Customer Reviews</h1>
 
-<div class="reviews">
+<div class="grid">
 
-<div class="review">
-Excellent food, good service and cool atmosphere. Dal Khichdi was superb.
+<div class="card">
+Excellent food and service. Dal Khichdi was superb.
 </div>
 
-<div class="review">
-Perfect place for friends and family gatherings with great cocktails.
+<div class="card">
+Great place for friends and family gatherings.
 </div>
 
-<div class="review">
-Great ambiance with sports bar and private dining rooms.
+<div class="card">
+Amazing ambiance with sports bar experience.
 </div>
 
 </div>
 
-</section>
+<br>
 
-<!-- RESERVATION -->
-
-<section id="reserve">
-
-<h2>Reserve a Table</h2>
-
-<form onsubmit="bookTable(event)">
-
-<input type="text" placeholder="Your Name" required>
-<input type="tel" placeholder="Phone Number" required>
-<input type="date" required>
-<input type="time" required>
-
-<select required>
-<option>Guests</option>
-<option>1</option>
-<option>2</option>
-<option>3</option>
-<option>4+</option>
-</select>
-
-<button type="submit">Reserve Now</button>
-
-</form>
+<a class="btn" onclick="goBack()">← Back</a>
 
 </section>
 
 <!-- CONTACT -->
 
-<section id="contact">
+<section id="contact" class="page">
 
-<h2>Contact Us</h2>
+<h1>Contact</h1>
 
-<div class="contact-info">
+<div class="contact">
 
-<p>📍 Hubtown Vedant, 1st Floor H.M. Marg</p>
-<p>Sardar Nagar No.4, Sion Koliwada</p>
+<p>📍 Hubtown Vedant, Sion Koliwada</p>
 <p>Mumbai, Maharashtra 400037</p>
 
 <br>
@@ -420,15 +346,19 @@ Great ambiance with sports bar and private dining rooms.
 
 <br>
 
-<a href="https://wa.me/918976052856" class="btn">WhatsApp</a>
+<a class="btn" href="https://wa.me/918976052856">WhatsApp</a>
 
 </div>
+
+<br>
+
+<a class="btn" onclick="goBack()">← Back</a>
 
 </section>
 
 <footer>
 
-<p>© 2026 The Palate Restaurant | All Rights Reserved</p>
+<p>© 2026 The Palate Restaurant</p>
 
 </footer>
 
@@ -438,9 +368,32 @@ function toggleMenu(){
 document.getElementById("menu").classList.toggle("active");
 }
 
-function bookTable(e){
-e.preventDefault();
-alert("Thank you! Your table reservation request has been submitted.");
+function openPage(page){
+
+let pages=document.querySelectorAll(".page");
+
+pages.forEach(p=>{
+p.classList.remove("active");
+});
+
+document.getElementById(page).classList.add("active");
+
+history.pushState({page:page},"","#"+page);
+
+}
+
+function goBack(){
+history.back();
+}
+
+window.onpopstate=function(event){
+
+if(event.state){
+
+openPage(event.state.page)
+
+}
+
 }
 
 </script>
