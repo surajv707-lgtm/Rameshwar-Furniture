@@ -3,29 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PREMIUM CAR GALLERY | TRUST & EXCELLENCE</title>
+    <title>RAMESHWAR FURNITURE | PREMIUM CRAFTSMANSHIP</title>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-gold: #D4AF37;
-            --deep-charcoal: #121212;
-            --trust-blue: #1A2A6C;
-            --soft-white: #F5F5F5;
-            --slate-gray: #2C2C2C;
-            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --primary-gold: #C5A021;
+            --deep-dark: #0F0F0F;
+            --slate-bg: #1A1A1A;
+            --text-main: #F2F2F2;
+            --text-dim: #B0B0B0;
+            --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--deep-charcoal);
-            color: var(--soft-white);
+            background-color: var(--deep-dark);
+            color: var(--text-main);
             line-height: 1.8;
             overflow-x: hidden;
         }
 
-        h1, h2, h3, .nav-link {
+        h1, h2, h3, .nav-item {
             font-family: 'Oswald', sans-serif;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -33,267 +33,296 @@
 
         /* --- NAVIGATION --- */
         nav {
-            padding: 1.5rem 5%;
+            padding: 20px 6%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(18, 18, 18, 0.95);
+            background: rgba(15, 15, 15, 0.98);
             position: fixed;
             width: 100%;
             z-index: 1000;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            border-bottom: 1px solid rgba(197, 160, 33, 0.15);
         }
 
-        .logo { font-size: 1.8rem; font-weight: 700; color: var(--primary-gold); }
+        .brand-logo { 
+            font-size: 1.6rem; 
+            font-weight: 700; 
+            color: var(--primary-gold); 
+            text-decoration: none;
+        }
 
-        .menu-toggle {
+        .menu-btn {
             cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
+            padding: 10px;
+            z-index: 3000;
         }
 
-        .menu-toggle span {
-            width: 30px;
+        .menu-btn div {
+            width: 25px;
             height: 2px;
             background: var(--primary-gold);
+            margin: 5px 0;
+            transition: var(--transition);
         }
 
-        /* Full Screen Menu Overlay */
-        #menu-overlay {
+        /* Full Screen Menu Page */
+        #main-menu {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: var(--deep-charcoal);
+            background: var(--deep-dark);
             display: none;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            z-index: 2000;
+            z-index: 2500;
         }
 
-        .menu-link {
-            font-size: 3rem;
-            color: var(--soft-white);
+        .menu-option {
+            font-size: 3.5rem;
+            color: var(--text-main);
             text-decoration: none;
-            margin: 1rem 0;
+            margin: 15px 0;
             transition: var(--transition);
+            cursor: pointer;
         }
 
-        .menu-link:hover { color: var(--primary-gold); transform: scale(1.1); }
+        .menu-option:hover { color: var(--primary-gold); letter-spacing: 8px; }
 
-        /* --- SECTION LOGIC --- */
-        .page-section {
-            padding: 100px 10%;
+        /* --- PAGE SECTIONS --- */
+        .page-view {
+            padding: 120px 8% 60px;
             min-height: 100vh;
-            display: none; /* Hidden by default */
-            animation: fadeIn 0.8s ease;
+            display: none;
+            animation: slideUp 0.6s ease-out;
         }
 
-        .active-section { display: block; }
+        .active-view { display: block; }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         /* --- HOME PREVIEW --- */
-        .hero {
-            height: 100vh;
+        .hero-banner {
+            height: 80vh;
             display: flex;
-            flex-direction: column;
+            align-items: center;
             justify-content: center;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80&w=1920') no-select center/cover;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.4), var(--deep-dark)), 
+                        url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=1920');
+            background-size: cover;
+            background-position: center;
             text-align: center;
+            margin-bottom: 50px;
         }
 
-        .hero h1 { font-size: clamp(3rem, 8vw, 6rem); margin-bottom: 1rem; color: #fff; }
+        .hero-banner h1 { font-size: clamp(3rem, 10vw, 6rem); color: #fff; }
 
-        .preview-grid {
+        .home-preview-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
         }
 
-        .car-card {
-            background: var(--slate-gray);
-            border-radius: 4px;
-            overflow: hidden;
-            border-bottom: 3px solid var(--primary-gold);
+        .preview-card {
+            background: var(--slate-bg);
+            border: 1px solid #333;
+            padding: 2px;
             transition: var(--transition);
+            cursor: pointer;
         }
 
-        .car-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+        .preview-card:hover { border-color: var(--primary-gold); transform: scale(1.02); }
 
-        .car-card img { width: 100%; height: 200px; object-fit: cover; }
+        .preview-card img { width: 100%; height: 250px; object-fit: cover; }
 
-        .card-content { padding: 1.5rem; }
+        .preview-info { padding: 25px; }
 
-        /* --- LARGE TYPOGRAPHY DETAILS --- */
-        .detail-text {
-            font-size: 1.4rem;
-            max-width: 900px;
-            margin-bottom: 2.5rem;
-            color: #ccc;
-        }
-
-        .headline-large {
-            font-size: 3.5rem;
-            color: var(--primary-gold);
-            margin-bottom: 2rem;
+        /* --- CONTENT TYPOGRAPHY --- */
+        .large-line {
+            font-size: 4rem;
             line-height: 1.1;
+            margin-bottom: 30px;
+            color: var(--primary-gold);
+        }
+
+        .big-paragraph {
+            font-size: 1.35rem;
+            color: var(--text-dim);
+            max-width: 1000px;
+            margin-bottom: 40px;
+            text-align: justify;
+        }
+
+        .back-nav {
+            display: inline-block;
+            color: var(--primary-gold);
+            font-weight: 600;
+            margin-bottom: 40px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         /* --- CONTACT FORM --- */
-        .contact-container {
-            background: var(--slate-gray);
-            padding: 4rem;
-            border-radius: 8px;
-            max-width: 800px;
-            margin: 0 auto;
+        .form-box {
+            background: #111;
+            border: 1px solid var(--primary-gold);
+            padding: 50px;
+            max-width: 900px;
+            margin-top: 50px;
         }
 
-        .form-group { margin-bottom: 1.5rem; }
+        .input-row { margin-bottom: 25px; }
 
         input, textarea {
             width: 100%;
-            padding: 1rem;
-            background: #1a1a1a;
-            border: 1px solid #444;
+            padding: 18px;
+            background: #000;
+            border: 1px solid #333;
             color: white;
-            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
         }
 
         input:focus { border-color: var(--primary-gold); outline: none; }
 
-        .btn-premium {
+        .submit-btn {
             background: var(--primary-gold);
-            color: black;
-            padding: 1rem 3rem;
+            color: #000;
+            padding: 15px 45px;
             border: none;
-            font-family: 'Oswald', sans-serif;
             font-weight: 700;
+            font-family: 'Oswald', sans-serif;
             cursor: pointer;
             transition: var(--transition);
         }
 
-        .btn-premium:hover { background: #fff; transform: scale(1.05); }
-
-        .back-btn {
-            display: inline-block;
-            margin-bottom: 2rem;
-            color: var(--primary-gold);
-            cursor: pointer;
-            font-weight: 600;
-        }
+        .submit-btn:hover { background: #fff; letter-spacing: 3px; }
 
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">LUXE GALLERY</div>
-        <div class="menu-toggle" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
+        <a href="#" class="brand-logo" onclick="openPage('home')">RAMESHWAR FURNITURE</a>
+        <div class="menu-btn" onclick="toggleMainMenu()">
+            <div></div><div></div><div></div>
         </div>
     </nav>
 
-    <div id="menu-overlay">
-        <a href="#" class="menu-link" onclick="showSection('home')">Home</a>
-        <a href="#" class="menu-link" onclick="showSection('inventory')">Inventory</a>
-        <a href="#" class="menu-link" onclick="showSection('about')">Our Legacy</a>
-        <a href="#" class="menu-link" onclick="showSection('contact')">Connect</a>
+    <div id="main-menu">
+        <div class="menu-option" onclick="openPage('home')">Home</div>
+        <div class="menu-option" onclick="openPage('collections')">Collections</div>
+        <div class="menu-option" onclick="openPage('about')">Our Trust</div>
+        <div class="menu-option" onclick="openPage('contact')">Inquiry</div>
     </div>
 
-    <section id="home" class="page-section active-section">
-        <div class="hero">
-            <h1>Elite Performance</h1>
-            <p style="font-size: 1.5rem; letter-spacing: 5px;">DEFINING LUXURY SINCE 1998</p>
+    <div id="home" class="page-view active-view">
+        <div class="hero-banner">
+            <h1>CRAFTING TRUST</h1>
         </div>
-
-        <div class="preview-grid">
-            <div class="car-card" onclick="showSection('inventory')">
-                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=800" alt="Car">
-                <div class="card-content"><h3>Sports Collection</h3><p>View Details →</p></div>
-            </div>
-            <div class="car-card" onclick="showSection('inventory')">
-                <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&q=80&w=800" alt="Car">
-                <div class="card-content"><h3>Executive Sedans</h3><p>View Details →</p></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="inventory" class="page-section">
-        <div class="back-btn" onclick="showSection('home')">← BACK TO HOME</div>
-        <h2 class="headline-large">Premium Inventory</h2>
-        <p class="detail-text">
-            Our collection is meticulously curated for the most discerning drivers. Every vehicle undergoes a 200-point trust certification, ensuring that luxury is matched by uncompromising reliability and performance.
-        </p>
-        </section>
-
-    <section id="about" class="page-section">
-        <div class="back-btn" onclick="showSection('home')">← BACK TO HOME</div>
-        <h2 class="headline-large">A Legacy of Trust</h2>
-        <p class="detail-text">
-            We don't just sell cars; we provide an entry into a world of excellence. Our heritage is built on the foundations of transparency, integrity, and the pursuit of automotive perfection.
-        </p>
-        <p class="detail-text">
-            Located in the heart of the automotive district, our showroom stands as a testament to engineering beauty. Every corner of our space is designed to reflect the premium nature of the vehicles we house.
-        </p>
-    </section>
-
-    <section id="contact" class="page-section">
-        <div class="back-btn" onclick="showSection('home')">← BACK TO HOME</div>
-        <h2 class="headline-large">Secure Your Consultation</h2>
         
-        <div class="contact-container">
-            <form action="https://formspree.io/f/YOUR_ID_HERE" method="POST">
-                <div class="form-group">
-                    <input type="text" name="name" placeholder="FULL NAME" required>
+        <h2 class="large-line">Our Masterpieces</h2>
+        <div class="home-preview-grid">
+            <div class="preview-card" onclick="openPage('collections')">
+                <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&q=80&w=800" alt="Living">
+                <div class="preview-info"><h3>Living Room Luxury</h3><p>View Series →</p></div>
+            </div>
+            <div class="preview-card" onclick="openPage('collections')">
+                <img src="https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&q=80&w=800" alt="Bedroom">
+                <div class="preview-info"><h3>Royal Bedroom Sets</h3><p>View Series →</p></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="collections" class="page-view">
+        <div class="back-nav" onclick="goBack()">← Go Back</div>
+        <h2 class="large-line">Premium Inventory</h2>
+        <p class="big-paragraph">
+            At Rameshwar Furniture, we specialize in high-durability, premium aesthetic wood and metal work. Our collections range from Sofa Sets, Dining Tables, and Wall-to-Wall Sliding Wardrobes to bespoke TV units and Kitchen cabinets. Each piece is designed to command attention while providing the comfort your home deserves.
+        </p>
+        <p class="big-paragraph">
+            Every product is hand-finished with luxury textures that resonate with our "Trust-First" philosophy. We use only seasoned materials to ensure that your investment lasts for generations.
+        </p>
+    </div>
+
+    <div id="about" class="page-view">
+        <div class="back-nav" onclick="goBack()">← Go Back</div>
+        <h2 class="large-line">Our Professional Legacy</h2>
+        <p class="big-paragraph">
+            Located at the heart of the furniture hub, Rameshwar Furniture has been a hallmark of quality for over two decades. We believe that professional service and premium materials are the only way to build lasting relationships with our clients.
+        </p>
+        <p class="big-paragraph">
+            Address: [Insert Same Location from Car Site Here] <br>
+            Direction: [Insert Same Map Link Here]
+        </p>
+    </div>
+
+    <div id="contact" class="page-view">
+        <div class="back-nav" onclick="goBack()">← Go Back</div>
+        <h2 class="large-line">Direct Inquiry</h2>
+        <p class="big-paragraph">Fill out the form below and our professional consultant will contact you within 24 hours regarding your furniture requirements.</p>
+        
+        <div class="form-box">
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <div class="input-row">
+                    <input type="text" name="name" placeholder="YOUR FULL NAME" required>
                 </div>
-                <div class="form-group">
+                <div class="input-row">
                     <input type="email" name="email" placeholder="EMAIL ADDRESS" required>
                 </div>
-                <div class="form-group">
-                    <textarea name="message" rows="5" placeholder="TELL US ABOUT YOUR REQUIREMENTS"></textarea>
+                <div class="input-row">
+                    <textarea name="requirements" rows="6" placeholder="DESCRIBE YOUR FURNITURE NEEDS (Sofa, Bed, Wardrobe, etc.)"></textarea>
                 </div>
-                <button type="submit" class="btn-premium">SEND INQUIRY</button>
+                <button type="submit" class="submit-btn">SEND TO MY EMAIL</button>
             </form>
         </div>
-    </section>
+    </div>
 
     <script>
-        // Toggle Full Screen Menu
-        function toggleMenu() {
-            const overlay = document.getElementById('menu-overlay');
-            overlay.style.display = (overlay.style.display === 'flex') ? 'none' : 'flex';
+        let historyStack = ['home'];
+
+        function toggleMainMenu() {
+            const menu = document.getElementById('main-menu');
+            menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
         }
 
-        // Section Navigation Logic
-        function showSection(sectionId) {
-            // Close menu
-            document.getElementById('menu-overlay').style.display = 'none';
+        function openPage(pageId) {
+            // Close menu if open
+            document.getElementById('main-menu').style.display = 'none';
 
-            // Hide all sections
-            const sections = document.querySelectorAll('.page-section');
-            sections.forEach(s => s.classList.remove('active-section'));
+            // Manage History for "Back" button
+            if (historyStack[historyStack.length - 1] !== pageId) {
+                historyStack.push(pageId);
+            }
 
-            // Show target section
-            document.getElementById(sectionId).classList.add('active-section');
+            // Hide all views
+            document.querySelectorAll('.page-view').forEach(view => {
+                view.classList.remove('active-view');
+            });
 
-            // Scroll to top
+            // Show current view
+            document.getElementById(pageId).classList.add('active-view');
             window.scrollTo(0, 0);
         }
 
-        // Back button history logic
-        window.onpopstate = function() {
-            showSection('home');
-        };
+        function goBack() {
+            if (historyStack.length > 1) {
+                historyStack.pop(); // Remove current
+                const previousPage = historyStack[historyStack.length - 1];
+                
+                document.querySelectorAll('.page-view').forEach(view => {
+                    view.classList.remove('active-view');
+                });
+                
+                document.getElementById(previousPage).classList.add('active-view');
+            }
+        }
     </script>
 </body>
 </html>
+
