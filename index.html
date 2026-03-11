@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Premium Car Gallery</title>
+<title>Rameshwar Furniture</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
@@ -12,131 +14,117 @@
 
 body{
 margin:0;
-font-family:'Poppins',sans-serif;
-background:#0f172a;
-color:white;
+font-family:Poppins;
+background:#7a2e0e;
+color:#fff3e6;
 }
 
-/* NAVBAR */
+/* TOP BAR */
 
-nav{
+.topbar{
+background:#6a260b;
+padding:8px 20px;
+font-size:14px;
+display:flex;
+gap:20px;
+}
+
+/* HEADER */
+
+header{
+background:#f2f2f2;
+color:#7a2e0e;
+padding:15px 20px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 40px;
-background:#020617;
-position:sticky;
-top:0;
 }
 
 .logo{
+display:flex;
+gap:10px;
+align-items:center;
+}
+
+.logo span{
 font-size:24px;
 font-weight:700;
-color:#38bdf8;
+}
+
+.tagline{
+font-size:14px;
+color:#555;
 }
 
 .menu-btn{
-font-size:28px;
+font-size:26px;
 cursor:pointer;
 }
 
+/* MENU */
+
 .menu{
 display:none;
-flex-direction:column;
-background:#020617;
-position:absolute;
-top:70px;
-right:30px;
+background:#7a2e0e;
 padding:20px;
-border-radius:8px;
 }
 
 .menu a{
+display:block;
+color:#fff3e6;
 text-decoration:none;
-color:white;
-margin:10px 0;
-font-size:18px;
+padding:10px 0;
+font-size:20px;
 }
 
 .menu a:hover{
-color:#38bdf8;
-}
-
-/* HERO */
-
-.hero{
-height:90vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding:20px;
-}
-
-.hero h1{
-font-size:50px;
-line-height:1.3;
-}
-
-.hero p{
-max-width:700px;
-margin:auto;
-font-size:18px;
-opacity:0.8;
-}
-
-/* BUTTON */
-
-.btn{
-background:#38bdf8;
-padding:12px 30px;
-border-radius:30px;
-display:inline-block;
-margin-top:20px;
-text-decoration:none;
-color:black;
-font-weight:600;
+color:#ffd27a;
 }
 
 /* SECTION */
 
 section{
-padding:80px 40px;
-max-width:1200px;
+padding:40px 20px;
+max-width:1100px;
 margin:auto;
 }
 
-.title{
-font-size:38px;
-margin-bottom:30px;
-color:#38bdf8;
+h1{
+font-size:40px;
+line-height:1.4;
 }
 
-/* CAR GRID */
+p{
+font-size:18px;
+line-height:1.8;
+}
+
+/* GRID */
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:20px;
+margin-top:20px;
 }
 
 .card{
-background:#1e293b;
+background:#8b3a16;
+padding:20px;
 border-radius:10px;
-overflow:hidden;
+text-align:center;
 }
 
 .card img{
 width:100%;
-height:200px;
-object-fit:cover;
+border-radius:8px;
 }
 
 .card h3{
-padding:10px;
+margin-top:10px;
 }
 
-/* FORM */
+/* CONTACT */
 
 form{
 display:flex;
@@ -148,13 +136,14 @@ max-width:500px;
 input,textarea{
 padding:12px;
 border:none;
-border-radius:6px;
+border-radius:5px;
 }
 
 button{
-background:#38bdf8;
-border:none;
 padding:12px;
+border:none;
+background:#ffd27a;
+color:#7a2e0e;
 font-weight:600;
 cursor:pointer;
 }
@@ -162,123 +151,213 @@ cursor:pointer;
 /* FOOTER */
 
 footer{
+background:#7a2e0e;
+padding:40px 20px;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:30px;
+}
+
+.footer-title{
+font-size:20px;
+font-weight:600;
+margin-bottom:10px;
+}
+
+.footer a{
+display:block;
+color:#fff3e6;
+text-decoration:none;
+margin:6px 0;
+}
+
+.copyright{
 text-align:center;
-padding:40px;
-background:#020617;
-margin-top:40px;
+margin-top:20px;
+font-size:14px;
 }
 
 </style>
+
 </head>
 
 <body>
 
-<nav>
+<div class="topbar">
 
-<div class="logo">CAR GALLERY</div>
+📞 +91 98765 43210  
+✉ info@rameshwarfurniture.com
+
+</div>
+
+<header>
+
+<div class="logo">
+🛋
+<div>
+<span>Rameshwar Furniture</span>
+<div class="tagline">Quality. Comfort. Style.</div>
+</div>
+</div>
 
 <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+</header>
 
 <div class="menu" id="menu">
 
 <a href="#home">Home</a>
-<a href="#gallery">Gallery</a>
-<a href="#about">About</a>
+<a href="#living">Living Room</a>
+<a href="#bedroom">Bedroom</a>
+<a href="#dining">Dining</a>
+<a href="#office">Office</a>
+<a href="#custom">Custom Furniture</a>
 <a href="#contact">Contact</a>
 
 </div>
 
-</nav>
+<section id="home">
 
-<!-- HERO -->
-
-<section class="hero" id="home">
-
-<div>
-
-<h1>Discover The Most Powerful Luxury Cars</h1>
+<h1>Premium Furniture Crafted With Passion For Over 25 Years</h1>
 
 <p>
-Welcome to our premium car gallery where performance meets luxury.
-Our platform showcases powerful machines designed for speed, elegance,
-and engineering excellence. Explore world-class vehicles and experience
-the ultimate automotive showcase built for true car enthusiasts.
+
+Rameshwar Furniture is your trusted partner for elegant and durable
+home furniture. Our mission is to create beautiful living spaces by
+combining expert craftsmanship, premium materials, and timeless
+design.
+
+From luxury living room sofas to modern bedroom furniture,
+our collections bring comfort, style, and durability together.
+
 </p>
 
-<a class="btn" href="#gallery">Explore Cars</a>
-
-</div>
-
-</section>
-
-<!-- GALLERY -->
-
-<section id="gallery">
-
-<h2 class="title">Featured Cars</h2>
+<h2>Explore Our Categories</h2>
 
 <div class="grid">
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
-<h3>Luxury Sports Car</h3>
+<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85">
+<h3>Living Room</h3>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c">
-<h3>Premium Performance</h3>
+<img src="https://images.unsplash.com/photo-1505693314120-0d443867891c">
+<h3>Bedroom</h3>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8">
-<h3>Classic Muscle Car</h3>
+<img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511">
+<h3>Dining</h3>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1542362567-b07e54358753">
-<h3>Modern Supercar</h3>
+<img src="https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf">
+<h3>Office</h3>
 </div>
 
 </div>
 
 </section>
 
-<!-- ABOUT -->
+<section id="living">
 
-<section id="about">
+<h1>Luxury Living Room Furniture</h1>
 
-<h2 class="title">About Our Gallery</h2>
+<p>
 
-<p style="font-size:18px;line-height:1.8;max-width:900px;">
+Our living room furniture is designed to create a welcoming
+environment where comfort meets sophistication.
 
-Our platform is designed to bring automotive passion to life. 
-We provide a high-quality visual experience showcasing some of the 
-most powerful, luxurious, and technologically advanced cars ever created.
-
-Every vehicle featured here represents engineering brilliance,
-precision design, and unmatched performance.
-
-Our mission is to create a trusted and professional environment
-where car enthusiasts, collectors, and automotive lovers can explore
-high-end vehicles with detailed visuals and premium presentation.
+Choose from premium sofas, elegant coffee tables,
+stylish TV units, and beautifully crafted storage solutions.
 
 </p>
 
+<button onclick="history.back()">⬅ Back</button>
+
 </section>
 
-<!-- CONTACT -->
+<section id="bedroom">
+
+<h1>Modern Bedroom Furniture</h1>
+
+<p>
+
+Experience restful sleep and beautiful design with our
+bedroom furniture collection including beds, wardrobes,
+and bedside tables crafted with precision.
+
+</p>
+
+<button onclick="history.back()">⬅ Back</button>
+
+</section>
+
+<section id="dining">
+
+<h1>Elegant Dining Furniture</h1>
+
+<p>
+
+Create unforgettable family moments with our premium
+dining tables and chairs designed to combine style
+with everyday durability.
+
+</p>
+
+<button onclick="history.back()">⬅ Back</button>
+
+</section>
+
+<section id="office">
+
+<h1>Professional Office Furniture</h1>
+
+<p>
+
+Boost productivity with comfortable office desks,
+chairs, and smart storage solutions built
+for modern workspaces.
+
+</p>
+
+<button onclick="history.back()">⬅ Back</button>
+
+</section>
+
+<section id="custom">
+
+<h1>Custom Furniture</h1>
+
+<p>
+
+We specialize in custom furniture tailored
+to your space and style preferences.
+
+Our expert craftsmen design furniture
+that perfectly fits your home or office.
+
+</p>
+
+<button onclick="history.back()">⬅ Back</button>
+
+</section>
 
 <section id="contact">
 
-<h2 class="title">Contact Us</h2>
+<h1>Contact Us</h1>
 
-<form id="contactForm">
+<form action="mailto:info@rameshwarfurniture.com" method="POST">
 
 <input type="text" placeholder="Your Name" required>
 
 <input type="email" placeholder="Your Email" required>
 
-<textarea rows="5" placeholder="Your Message"></textarea>
+<textarea rows="5" placeholder="Message"></textarea>
 
 <button type="submit">Send Message</button>
 
@@ -288,27 +367,80 @@ high-end vehicles with detailed visuals and premium presentation.
 
 <footer>
 
-<p>© 2026 Premium Car Gallery</p>
+<div class="footer-grid">
+
+<div>
+
+<div class="footer-title">Rameshwar Furniture</div>
+
+<p>
+
+Quality furniture crafted with passion for over
+25 years. Your trusted partner in creating
+beautiful spaces.
+
+</p>
+
+</div>
+
+<div>
+
+<div class="footer-title">Quick Links</div>
+
+<a href="#home">Home</a>
+<a href="#living">Categories</a>
+<a href="#living">All Products</a>
+<a href="#custom">Custom Orders</a>
+<a href="#">Reviews</a>
+
+</div>
+
+<div>
+
+<div class="footer-title">Categories</div>
+
+<a href="#living">Living Room</a>
+<a href="#bedroom">Bedroom</a>
+<a href="#dining">Dining</a>
+<a href="#office">Office</a>
+
+</div>
+
+<div>
+
+<div class="footer-title">Contact Us</div>
+
+📍 Shop No.1, Ground Floor  
+Main Market, Mumbai  
+Maharashtra, India  
+
+<br><br>
+
+📞 +91 98765 43210  
+📞 +91 98765 43211  
+
+<br><br>
+
+✉ info@rameshwarfurniture.com
+
+</div>
+
+</div>
+
+<div class="copyright">
+
+© 2024 Rameshwar Furniture. All rights reserved.
+
+</div>
 
 </footer>
 
 <script>
 
 function toggleMenu(){
-
-let menu=document.getElementById("menu");
-
-menu.style.display = menu.style.display === "flex" ? "none" : "flex";
-
+let menu=document.getElementById("menu")
+menu.style.display = menu.style.display==="block"?"none":"block"
 }
-
-document.getElementById("contactForm").addEventListener("submit",function(e){
-
-e.preventDefault();
-
-alert("Message sent to email successfully!");
-
-});
 
 </script>
 
